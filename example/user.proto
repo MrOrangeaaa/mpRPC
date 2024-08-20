@@ -1,0 +1,65 @@
+/**
+ * RPC框架并不会(也无法)提供以下内容，需要框架的使用者根据具体业务自己定义
+ * 通常是由callee编写，声明其：
+ * 1. 提供的RPC服务有哪些
+ * 2. 每个服务中分别又有哪些方法
+ * 3. 每个方法的参数(Request)和返回值(Response)分别又是怎样的一种结构体类型
+ */
+
+syntax = "proto3";
+
+package fixbug;  // namespace fixbug
+
+option cc_generic_services = true;
+
+/**
+ * 说到底在调用远端方法的时候，只需要传递三样东西：
+ * 1. 远端方法的名字
+ * 2. 参数
+ * 3. 返回值
+ */
+
+// message关键字，可以理解为声明一个结构体 -> protobuf就会对其执行序列化/反序列化
+message ResultCode
+{
+    int32 errcode = 1; 
+    bytes errmsg = 2;
+}
+
+message LoginRequest
+{
+    bytes name = 1;
+    bytes pwd = 2;
+}
+
+message LoginResponse
+{
+    ResultCode result = 1;
+    bool sucess = 2;
+}
+
+message RegisterRequest
+{
+    uint32 id = 1;
+    bytes name = 2;
+    bytes pwd = 3;
+}
+
+message RegisterResponse
+{
+    ResultCode result = 1;
+    bool sucess = 2;
+}
+
+
+/**
+ * service关键字，声明一个RPC服务 -> service
+ * rpc关键字，声明该服务提供的方法 -> method
+ * 这就是我们选择protobuf的原因之一：它不仅可以作为数据序列化工具，还为实现RPC框架提供了很多天然的支持
+ */
+service UserServiceRpc
+{
+    // 远端方法名的设置是很自由的，不一定要与本地方法名保持一致，但我们通常会让它们保持一致
+    rpc Login(LoginRequest) returns(LoginResponse);
+    rpc Register(RegisterRequest) returns(RegisterResponse);
+}

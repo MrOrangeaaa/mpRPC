@@ -1,0 +1,74 @@
+[
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/src",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcapplication.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcapplication.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/src",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/mprpc.dir/mprpcconfig.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcconfig.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcconfig.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/src",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/mprpc.dir/mprpcheader.pb.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcheader.pb.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcheader.pb.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpcheader.pb.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/src",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/mprpc.dir/mprpcprovider.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcprovider.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcprovider.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpcprovider.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/src",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/mprpc.dir/mprpcchannel.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcchannel.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpcchannel.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/src",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/mprpc.dir/mprpccontroller.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpccontroller.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/mprpccontroller.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/src",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/mprpc.dir/logger.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/logger.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/logger.cc",
+  "output": "src/CMakeFiles/mprpc.dir/logger.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/src",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/mprpc.dir/zookeeperutil.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/zookeeperutil.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/zookeeperutil.cc",
+  "output": "src/CMakeFiles/mprpc.dir/zookeeperutil.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/example/callee",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/callee.dir/userservice.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/callee/userservice.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/callee/userservice.cc",
+  "output": "example/callee/CMakeFiles/callee.dir/userservice.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/example/callee",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/callee.dir/__/user.pb.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/user.pb.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/user.pb.cc",
+  "output": "example/callee/CMakeFiles/callee.dir/__/user.pb.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/example/caller",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/caller.dir/calluserservice.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/caller/calluserservice.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/caller/calluserservice.cc",
+  "output": "example/caller/CMakeFiles/caller.dir/calluserservice.cc.o"
+},
+{
+  "directory": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/build/example/caller",
+  "command": "/usr/bin/c++  -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/src/include -I/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/include -g -o CMakeFiles/caller.dir/__/user.pb.cc.o -c /home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/user.pb.cc",
+  "file": "/home/ubuntu/Study/mprpc/mprpc-code/mprpc/example/user.pb.cc",
+  "output": "example/caller/CMakeFiles/caller.dir/__/user.pb.cc.o"
+}
+]
