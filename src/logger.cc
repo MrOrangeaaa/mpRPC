@@ -32,7 +32,7 @@ Logger::Logger()
             tm *nowtm = localtime(&now);
 
             char file_name[128];
-            sprintf(file_name, "%d-%d-%d-log.txt", nowtm->tm_year+1900, nowtm->tm_mon+1, nowtm->tm_mday);
+            sprintf(file_name, "%d-%d-%d.log", nowtm->tm_year+1900, nowtm->tm_mon+1, nowtm->tm_mday);
 
             FILE *pf = fopen(file_name, "a+");
             if (pf == nullptr)

@@ -1,5 +1,11 @@
 # Ignore the build directory
 build/
 
+# Ignore the bin directory
+bin/
+
+# Ignore the lib directory
+lib/
+
 # Ignore log files
 *.log
