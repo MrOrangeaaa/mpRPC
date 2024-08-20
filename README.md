@@ -1,15 +1,15 @@
 # mpRPC
 
 ## 简介
-mpRPC框架开发基于[muduo高性能网络库] + [Protobuf]，使用[Zookeeper]完成服务发现，并提供了[异步日志系统]
+mpRPC框架开发基于**muduo**高性能网络库 + **Protobuf**数据序列化工具，使用**Zookeeper**完成服务发现，并提供了**异步日志系统**
 
 ## 环境要求
 - 操作系统：[ubuntu 20.04]
 - 编译器：[GCC 9.4.0]
 - 依赖库：
   - [muduo-2.0.2]
-  - [protobuf-3.19.4]
-  - [zookeeper-3.4.10]
+  - [Protobuf-3.19.4]
+  - [Zookeeper-3.4.10]
   
 
 ## 安装
