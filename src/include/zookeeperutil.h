@@ -16,6 +16,6 @@ public:
     // 获取指定znode节点中的数据
     std::string GetData(const char *path);
 private:
-    // Zookeeper客户端句柄
+    // Zookeeper客户端句柄 -> 类似于使用mysql_init()创建一个MySQL连接，会返回一个连接句柄
     zhandle_t *m_zhandle;
 };

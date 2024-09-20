@@ -3,8 +3,8 @@
 #include <semaphore.h>
 #include <iostream>
 
-// 全局的watcher -> 观察器/监听器
-void global_watcher(zhandle_t *zh, int type, int state, const char *path, void *watcherCtx)
+// 回调函数
+void zk_callback(zhandle_t *zh, int type, int state, const char *path, void *watcherCtx)
 {
     if (type == ZOO_SESSION_EVENT)  // 会话事件
 	{
@@ -39,9 +39,9 @@ void ZkClient::Start()
 	 * zookeeper_mt: 多线程版本，三个线程并行工作
 	 * 1. API调用线程
 	 * 2. 网络IO线程 -> pthread_create  poll
-	 * 3. watcher回调线程 -> pthread_create
+	 * 3. zk_callback回调线程 -> pthread_create
 	 */
-    m_zhandle = zookeeper_init(connstr.c_str(), global_watcher, 30000, nullptr, nullptr, 0);
+    m_zhandle = zookeeper_init(connstr.c_str(), zk_callback, 30000, nullptr, nullptr, 0);
     if (nullptr == m_zhandle) 
     {
         std::cout << "zookeeper_init error!" << std::endl;
@@ -50,32 +50,34 @@ void ZkClient::Start()
 
     sem_t sem;
     sem_init(&sem, 0, 0);
+
     zoo_set_context(m_zhandle, &sem);
 
-    sem_wait(&sem);
-    std::cout << "zookeeper_init success!" << std::endl;
+    sem_wait(&sem);  // zookeeper_init()与ZkServer建立连接是异步进行的，这里阻塞等待连接成功
+    std::cout << "connect to ZkServer success!" << std::endl;
 }
 
-// 在ZkServer上根据指定的path创建znode节点
+// 根据指定的path创建znode节点
 void ZkClient::Create(const char *path, const char *data, int datalen, int state)
 {
     char path_buffer[128];
     int bufferlen = sizeof(path_buffer);
-    int flag;
+    int ret;
+
 	// 先判断path表示的znode节点是否存在，如果存在，就不再重复创建了
-	flag = zoo_exists(m_zhandle, path, 0, nullptr);
-	if (ZNONODE == flag)  // 表示path的znode节点不存在
+	ret = zoo_exists(m_zhandle, path, 0, nullptr);
+	if (ret == ZNONODE)  // 表示path的znode节点不存在
 	{
 		// 创建指定path的znode节点了
-		flag = zoo_create(m_zhandle, path, data, datalen,
-			&ZOO_OPEN_ACL_UNSAFE, state, path_buffer, bufferlen);
-		if (flag == ZOK)
+		ret = zoo_create(m_zhandle, path, data, datalen,
+						&ZOO_OPEN_ACL_UNSAFE, state, path_buffer, bufferlen);
+		if (ret == ZOK)
 		{
 			std::cout << "znode create success... path:" << path << std::endl;
 		}
 		else
 		{
-			std::cout << "flag:" << flag << std::endl;
+			std::cout << "zk error:" << ret << std::endl;
 			std::cout << "znode create error... path:" << path << std::endl;
 			exit(EXIT_FAILURE);
 		}
@@ -87,10 +89,11 @@ std::string ZkClient::GetData(const char *path)
 {
     char buffer[64];
 	int bufferlen = sizeof(buffer);
-	int flag = zoo_get(m_zhandle, path, 0, buffer, &bufferlen, nullptr);
-	if (flag != ZOK)
+	int ret = zoo_get(m_zhandle, path, 0, buffer, &bufferlen, nullptr);
+	if (ret != ZOK)
 	{
-		std::cout << "get znode error... path:" << path << std::endl;
+		std::cout << "zk error:" << ret << std::endl;
+		std::cout << "znode get error... path:" << path << std::endl;
 		return "";
 	}
 	else

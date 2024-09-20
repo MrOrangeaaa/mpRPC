@@ -1464,6 +1464,9 @@ UserServiceRpc_Stub::~UserServiceRpc_Stub() {
   if (owns_channel_) delete channel_;
 }
 
+
+// 桩函数之所以能帮我们调用远端方法，本质上还是依赖channel对象中实现的CallMethod()方法
+// channel对象才是整个caller端的核心
 void UserServiceRpc_Stub::Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::fixbug::LoginRequest* request,
                               ::fixbug::LoginResponse* response,
@@ -1478,6 +1481,7 @@ void UserServiceRpc_Stub::Register(::PROTOBUF_NAMESPACE_ID::RpcController* contr
   channel_->CallMethod(descriptor()->method(1),
                        controller, request, response, done);
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace fixbug

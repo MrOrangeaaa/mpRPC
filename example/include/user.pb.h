@@ -935,6 +935,7 @@ class UserServiceRpc : public ::PROTOBUF_NAMESPACE_ID::Service {
 
   static const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* descriptor();
 
+  // callee必须为以下方法提供具体实现（重写虚函数）
   virtual void Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::fixbug::LoginRequest* request,
                        ::fixbug::LoginResponse* response,

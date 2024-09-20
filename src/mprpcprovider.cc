@@ -61,7 +61,7 @@ void RpcProvider::Run()
     server.start();
     std::cout << "RpcProvider start services at " << ip << ":" << port << std::endl;
 
-    // Zookeeper -> 服务注册中心
+    // Zookeeper -> 进行服务注册
     ZkClient zkCli;
     zkCli.Start();
     for (auto &sp : m_serviceMap) 

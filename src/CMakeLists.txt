@@ -16,5 +16,6 @@ set(SRC_LIST
 add_library(mprpc ${SRC_LIST})
 
 # 注意链接的先后顺序，必须先muduo_net，后muduo_base -> 库之间是有依赖关系的
-# 我们使用的是多线程版本的Zookeeper库 -> zookeeper_mt
+# 我们使用的是多线程版本的Zookeeper客户端库 -> zookeeper_mt
+# 这个库提供了很多api，帮助你开发客户端程序，让你更方便地访问和使用Zookeeper服务
 target_link_libraries(mprpc muduo_net muduo_base pthread zookeeper_mt)
